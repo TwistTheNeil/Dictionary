@@ -6,4 +6,5 @@ curl -s http://thesaurus.com/browse/"$1" |
         -e 's/<div\sclass="synonym-description">.*//g' \
 	-e 's/\(.*\)/    \1/g' \
 	-e 's/\s\s\s\s\(Antonyms\sfor\s.*\)/\n\1/g' \
-	-e '1 s/\s\s\s\s\(.*\)/\1/'
+	-e '1 s/\s\s\s\s\(.*\)/\1/' \
+	-e '/^\s\s\s\sAntonyms/,$d'
