@@ -5,4 +5,5 @@ curl -s http://dictionary.reference.com/browse/"$1" |
     sed -e 's/<div\sclass="ety">.*//' \
 	-e 's/.*pbk\(.*\)/\1/g' \
         -e 's/<[^>]*>\|^">\s//g' \
-        -e 's/[0-9]\./\n    /g'
+        -e 's/[0-9]\./\n    /g' \
+	-e 's/:/:\n         Eg -/g'
